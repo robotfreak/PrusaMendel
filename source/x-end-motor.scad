@@ -26,6 +26,7 @@ corection = 1.17;
 
 use <x-end.scad>
 
+module xendmotor(linear) {
 difference (){
 		union ()
 		{
@@ -40,7 +41,7 @@ difference (){
 }
 translate([-5,-30,2])scale([2,1,2]) rotate(a=[90,0,0]) linear_extrude(file = "this-way-up.dxf", layer = "l",
   height = 2, center = true, convexity = 10, twist = -fanrot);
-
+}
 
 // GregFrosts stuff
 nema17_hole_spacing=1.2*25.4; 
@@ -198,4 +199,6 @@ sqrt((point1[0]-point2[0])*(point1[0]-point2[0])+
 function angle(a,b,c) = acos((a*a+b*b-c*c)/(2*a*b)); 
 
 function rotated(a)=[cos(a),sin(a),0];
+
+xendmotor(linear=true, lme8uu=false);
 

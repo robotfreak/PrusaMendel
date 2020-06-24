@@ -80,16 +80,12 @@ module xend_side(closed_end=true)
 				translate([axis_diameter_larger,0,0])
 				rotate([0,8,0])
 				translate([-slot_width,solid_end_width,-xend_height/2-1])
-				cube([slot_width,xend_length-2*solid_end_width,xend_height/2+1]);
+	    	 cube([slot_width,xend_length-2*solid_end_width,xend_height/2+1]);
 				// hack for a taper opening
 				#translate(v=[0,15,1.1]) rotate(a=90,v=[1,0,0]) cylinder(r1=axis_diameter_larger, r2=axis_diameter_larger+1.5,h=15, $fn=30);
 			}
 		}
 		
-		
-
-		
-
 		for (i=[0:5])
 		translate([-axis_diameter_larger+2,5+2.5+5*i,-7+0.6]) 
 		cylinder(h=2,r=0.4,$fn=6,center=true);
@@ -116,31 +112,40 @@ difference()
 
 
 			//Nut Trap
-			
-			translate([0,-20,0])
-			cylinder(h=40,r=m8cornerdiameter+thin_wall,$fn=6);
+			translate([0,-17,8])
+			cube([37,30,16], center=true);
 		}
-
-		// Slider cutout.
+ 		// Slider cutout.
 		translate([0,10,32.5]) 
 		cube([22.5,22.5,70],center=true);
 
-		translate([0,-10,5+29]) #cube([2,8,10],center=true);
-			translate([0,-10,5+29-11]) #cube([2,8,10],center=true);
-			translate([0,-10,3.25]) #cube([2,8,6.5],center=true);
+		//translate([0,-10,5+29]) #cube([2,8,10],center=true);
+		//	translate([0,-10,5+29-11]) #cube([2,8,10],center=true);
+		//	translate([0,-10,3.25]) #cube([2,8,6.5],center=true);
 
 		//Rod hole.
 		difference()
 		{
 			
-			translate([0,-20,39.5-45]) nut(m8_nut_diameter,90);
+			//translate([0,-20,39.5-45]) cylinder(r=11,h=90);
 			
 			//translate([0,-20,39.5]) cylinder(h=90,r=m8_nut_diameter/2,$fn=6,center=true);
-			translate([0,-20,8.5]) 
-			cylinder(h=4,r=m8_nut_diameter/2+thin_wall,$fn=6,center=true);
+			//translate([0,-20,8.5]) 
+			//cylinder(h=4,r=11+thin_wall,$fn=30,center=true);
+
+
 		}
-		translate([0,-20,52-45]) 
-		polyhole(9,90);
+		translate([0,-20,0]) 
+		polyhole(10.5,90);
+        
+        // top nut holes
+        translate([0,-20,0]) for (j=[0:90:90]){
+          rotate([0,0,j]) for (i=[-1:2:1]){
+            translate([i*8,0,-0.1/2]){
+              cylinder(d =3.2, h = 40, $fn = 30, center = false);
+            }
+          }
+        }
 	}
 }
 
@@ -167,3 +172,4 @@ xend(true);
 //}
 
 //xend_side();
+//xend(linear=true, lme8uu=false);

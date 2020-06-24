@@ -30,7 +30,7 @@ module xendidler(linear){
 		mirror(){
 			difference(){
 				union(){
-					translate(v = [21, -21.5, 25.3]) cube(size = [25.5,7,4.4], center = true);
+					//translate(v = [23, -21.5, 25.3]) cube(size = [14,7,4.4], center = true);
 					
 					translate(v = [20, 12.5-support_beam_offset, 25.3]) cube(size = [24,5,4.4], center = true);
 					translate(v = [32.5, -5, 7.5]) cube(size = [5,40,40], center = true);
@@ -43,4 +43,5 @@ module xendidler(linear){
   height = 2, center = true, convexity = 10, twist = -fanrot);
 }
 xendidler(linear);
+//xendidler(linear=true, lme8uu=false);
 
