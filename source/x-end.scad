@@ -142,7 +142,7 @@ difference()
         translate([0,-20,0]) for (j=[0:90:90]){
           rotate([0,0,j]) for (i=[-1:2:1]){
             translate([i*8,0,-0.1/2]){
-              cylinder(d =3.2, h = 40, $fn = 30, center = false);
+              cylinder(d =4.5, h = 40, $fn = 30, center = false);
             }
           }
         }
