@@ -53,7 +53,7 @@ motor_mount_translation=[54-thickness,8,23.5-4.7-12+24.5];
 
 top_corner=motor_mount_translation+[thickness,nema17_width/2,nema17_width/2];
 bridge_length=top_corner[0]-9;
-bridge_shear=0.48;
+bridge_shear=0.40;
 
 module positioned_motor_mount()
 {
@@ -200,5 +200,5 @@ function angle(a,b,c) = acos((a*a+b*b-c*c)/(2*a*b));
 
 function rotated(a)=[cos(a),sin(a),0];
 
-xendmotor(linear=true, lme8uu=false);
+xendmotor(linear=true);
 
