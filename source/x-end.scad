@@ -41,11 +41,11 @@ module xend_side(closed_end=true)
 				translate([0,xend_length/2,0]) cube([xend_height,xend_length,xend_height],center=true);
 				
 				// Cutting sides
-				for (i=[0:1])
+				/*for (i=[0:1])
 					translate([0,xend_length/2,0]) rotate(i*180){
 						translate([-12.5,0,2]) rotate([0,25,0]) cube([10,xend_length+2,20],center=true);
 						translate([-13,0,0]) rotate(a=[0,-10,0]) cube([10,xend_length+2,20],center=true);
-				}
+				}*/
 			}
 			
 			// Support beams from side to center of x-end

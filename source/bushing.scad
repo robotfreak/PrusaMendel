@@ -131,7 +131,7 @@ difference(){
 union(){
 //main block
 //translate(v=[-(lm8uu_radius+2.5)/2,0,block_height/2]) cube(size = [lm8uu_radius+2.5,lm8uu_diameter+5,block_height], center = true);
-translate(v=[-5,0,length/2]) cube(size = [16,26,length], center = true);
+translate(v=[-5,0,length/2]) cube(size = [15,26,length], center = true);
 
 //holder for main block in x-end
 // leaving it out now
