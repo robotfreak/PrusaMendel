@@ -21,7 +21,7 @@ corection = 1.17;
  * @using 2 m8x30
  */ 
 use <x-end.scad>
-support_beam_offset=(linear==true) ? 6:0;
+support_beam_offset=(linear==true) ? 3:0;
 
 module xendidler(linear){
 
@@ -33,7 +33,7 @@ module xendidler(linear){
 					//translate(v = [23, -21.5, 25.3]) cube(size = [14,7,4.4], center = true);
 					
 					translate(v = [27, 12.5-support_beam_offset, 25.3]) cube(size = [34,5,4.4], center = true);
-					translate(v = [42.5, -5, 7.5]) cube(size = [5,40,40], center = true);
+					translate(v = [42.5, -5, 7.5]) cube(size = [6,40,40], center = true);
 				}
 				translate(v = [42.5, -6, 28-3-4.7]) rotate(a=[0,90,0]) cylinder(h = 90, r=m8_diameter/2, $fn=9, center=true);
 			}

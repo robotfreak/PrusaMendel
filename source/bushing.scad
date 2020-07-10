@@ -72,7 +72,7 @@ module z_bushings(){
 difference(){
 // Slider.
 translate([0,6.5,30]) 
-cube([23,17,60],center=true);
+cube([23,16,60],center=true);
 // Slider cutout.
 translate([0,10,32.5]) 
 cube([17,17,70],center=true);
@@ -131,7 +131,7 @@ difference(){
 union(){
 //main block
 //translate(v=[-(lm8uu_radius+2.5)/2,0,block_height/2]) cube(size = [lm8uu_radius+2.5,lm8uu_diameter+5,block_height], center = true);
-translate(v=[-5,0,length/2]) cube(size = [10,20,length], center = true);
+translate(v=[-5,0,length/2]) cube(size = [16,26,length], center = true);
 
 //holder for main block in x-end
 // leaving it out now
@@ -185,7 +185,7 @@ difference(){
 		linear_holder_base(lm8uu_length+4.5);
 		translate(v=[-10-2,0,lm8uu_holder_length/2]) cube(size = [4,20,lm8uu_holder_length], center = true);
 	}
-	translate(v=[0,0,12.5]) ziptie();
+	//translate(v=[0,0,12.5]) ziptie();
 }
 
 
@@ -224,11 +224,11 @@ module z_linear_bearings(){
 
 module ziptie(){
 difference(){
-translate(v=[0,0,0]) cylinder(h = 3.9, r=lm8uu_diameter);
-translate(v=[0,0,0]) cylinder(h = 5, r=lm8uu_diameter-3, $fn=50);
-translate(v=[0,0,3]) cylinder(h = 1, r1=lm8uu_diameter-3, r2=lm8uu_diameter, $fn=50);
+translate(v=[0,0,0]) cylinder(h = 3.9, r=lm8uu_diameter+5);
+translate(v=[0,0,0]) cylinder(h = 5, r=lm8uu_diameter+2, $fn=50);
+translate(v=[0,0,3]) cylinder(h = 1, r1=lm8uu_diameter+2, r2=lm8uu_diameter+5, $fn=50);
 }}
 
-
+ziptie();
 
 

@@ -163,7 +163,7 @@ module xendcorners(dia1, dia2, dia3, dia4, height=0)
 }
 //xendcorners(5,5,5,5,0);
 //difference(){
-xend(true);
+//xend(true);
 //translate(v = [15, -40, 0]) cube(size = [20,100,20]);
 
 //translate(v = [-15-20, -40, 0]) cube(size = [20,100,20]);
@@ -172,4 +172,4 @@ xend(true);
 //}
 
 //xend_side();
-//xend(linear=true, lme8uu=false);
+xend(linear=true, lme8uu=false);
