@@ -32,10 +32,10 @@ module xendidler(linear){
 				union(){
 					//translate(v = [23, -21.5, 25.3]) cube(size = [14,7,4.4], center = true);
 					
-					translate(v = [27, 12.5-support_beam_offset, 25.3]) cube(size = [34,5,4.4], center = true);
-					translate(v = [42.5, -5, 7.5]) cube(size = [6,40,40], center = true);
+					translate(v = [17, 12.5-support_beam_offset, 25.3]) cube(size = [11,5,4.4], center = true);
+					translate(v = [25.5, -5, 7.5]) cube(size = [6,40,40], center = true);
 				}
-				translate(v = [42.5, -6, 28-3-4.7]) rotate(a=[0,90,0]) cylinder(h = 90, r=m8_diameter/2, $fn=9, center=true);
+				translate(v = [42.5, -11, 28-3-4.7]) rotate(a=[0,90,0]) cylinder(h = 90, r=m8_diameter/2, $fn=9, center=true);
 			}
 		}
 	}
