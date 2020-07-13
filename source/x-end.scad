@@ -112,8 +112,9 @@ difference()
 
 
 			//Nut Trap
-			translate([0,-17,8])
-			cube([37,31,16], center=true);
+			translate([0,-20,0])
+			//cube([37,31,16], center=true);
+            cylinder(d=26,h=15.8);
 		}
  		// Slider cutout.
 		translate([0,10,32.5]) 
