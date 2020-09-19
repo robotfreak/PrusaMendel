@@ -23,6 +23,26 @@ corection = 1.17;
 use <x-end.scad>
 support_beam_offset=(linear==true) ? 3:0;
 
+module xendmotor() {
+  difference() {
+    union() { 
+        translate([-2,5,6]) cube([10,10,10]);
+        translate([-2,-25,6]) cube([10,10,10]);
+     }
+     translate([-2,-26,16]) rotate([0,45,0]) cube([15,45,15]);
+   }
+
+  translate([23,-5, 3]) difference() {
+    cube([50,43,6], center=true);
+    translate([5,0,-4]) cylinder(d=14, h=10);
+    translate([20.5,15.5,-4]) cylinder(d=4, h=10);
+    translate([20.5,-15.5,-4]) cylinder(d=4, h=10);
+    translate([-10.5,15.5,-4]) cylinder(d=4, h=10);
+    translate([-10.5,-15.5,-4]) cylinder(d=4, h=10);
+   
+  }
+}
+
 module xendidler(linear){
 
 	xend(true,linear);
@@ -41,6 +61,7 @@ module xendidler(linear){
 	}
 	translate([-5,-30,0])scale([2,1,2]) rotate(a=[90,0,0]) linear_extrude(file = "this-way-up.dxf", layer = "r",
   height = 2, center = true, convexity = 10, twist = -fanrot);
+    translate([45,0,0]) xendmotor();
 }
 xendidler(linear);
 //xendidler(linear=true, lme8uu=false);
