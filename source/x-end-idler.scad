@@ -29,7 +29,7 @@ module xendmotor() {
         translate([-2,5,6]) cube([10,10,10]);
         translate([-2,-25,6]) cube([10,10,10]);
      }
-     translate([-2,-26,16]) rotate([0,45,0]) cube([15,45.2,15]);
+     translate([-2,-26,16]) rotate([0,45,0]) cube([15,46,15]);
    }
 
   translate([23,-5, 3]) difference() {
@@ -61,7 +61,7 @@ module xendidler(linear){
 	}
 	translate([-5,-30,0])scale([2,1,2]) rotate(a=[90,0,0]) linear_extrude(file = "this-way-up.dxf", layer = "r",
   height = 2, center = true, convexity = 10, twist = -fanrot);
-    translate([45,0,-0.1]) xendmotor();
+    translate([44.8,0,-0]) xendmotor();
 }
 xendidler(linear);
 //xendidler(linear=true, lme8uu=false);
